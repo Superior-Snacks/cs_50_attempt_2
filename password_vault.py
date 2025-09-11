@@ -11,13 +11,16 @@ import secrets
 def setup():
     ...
 
+# make it safe
 def encrypt():
     ...
-
+#less safe
 def decrypt():
     ...
 
 def read_vault():
+    ...
+def write_vault():
     ...
 
 def add_to_vault():
