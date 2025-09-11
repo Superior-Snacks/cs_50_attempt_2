@@ -31,9 +31,9 @@ def decrypt():
 def read_vault(p):
     with open(p, "r", encoding="utf-8") as f:
         return json.load(f)
-def write_vault():
-    ...
-
+def write_vault(p, data):
+    with open(p, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2)
 
 def open_vault():
     ...
