@@ -18,10 +18,14 @@ def setup():
 
 # make it safe
 def encrypt():
-    ...
+    """
+    by the book do not be brave young cunt
+    """
 #less safe
 def decrypt():
-    ...
+    """
+    ======II=======
+    """
 
 #open n close
 def read_vault():
