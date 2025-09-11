@@ -29,6 +29,8 @@ def decrypt():
 
 #open n close
 def read_vault(p):
+    if not os.path.exists(p):
+        return {}
     with open(p, "r", encoding="utf-8") as f:
         return json.load(f)
     
