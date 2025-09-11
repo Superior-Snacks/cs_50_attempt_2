@@ -14,6 +14,17 @@ def encrypt():
 def decrypt():
     ...
 
+def read_vault():
+    ...
+    
+def add_to_vault():
+    ...
+
+
+
+
+
+
 def main():
     ...
 
