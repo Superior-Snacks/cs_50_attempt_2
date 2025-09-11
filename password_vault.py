@@ -40,17 +40,28 @@ def write_vault(p, data):
             json.dump(data, f, indent=2)
 
 def get_master():
-    ...
+    """
+    prompt master password
+    """
+
 
 def open_vault():
-    ...
+    """
+    UNLOCK
+    """
 def save_to_vault():
-    ...
+    """
+    save enrtys
+    """
 
 def term_add():
-    ...
+    """
+    """
+    
 def term_show():
-    ...
+    """
+    
+    """
 
 
 
