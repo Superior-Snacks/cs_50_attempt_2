@@ -8,6 +8,12 @@ import hashlib
 import secrets
 
 
+def encrypt():
+    ...
+
+def decrypt():
+    ...
+
 def main():
     ...
 
