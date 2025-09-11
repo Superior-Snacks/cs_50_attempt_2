@@ -29,6 +29,11 @@ def open_vault():
 def save_to_vault():
     ...
 
+def term_add():
+    ...
+def term_show():
+    ...
+
 
 
 
