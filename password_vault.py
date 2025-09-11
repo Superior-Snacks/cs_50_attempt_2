@@ -14,8 +14,9 @@ DEFAULT_ITERATIONS = 200_000
 
 #to use
 def setup():
-    ...
-
+    """
+    the o'l init
+    """
 # make it safe
 def encrypt():
     """
