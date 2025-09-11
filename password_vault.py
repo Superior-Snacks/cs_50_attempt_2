@@ -26,7 +26,7 @@ def write_vault():
 
 def open_vault():
     ...
-def add_to_vault():
+def save_to_vault():
     ...
 
 
