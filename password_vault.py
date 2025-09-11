@@ -8,6 +8,9 @@ import hashlib
 import secrets
 
 
+def setup():
+    ...
+
 def encrypt():
     ...
 
@@ -16,7 +19,7 @@ def decrypt():
 
 def read_vault():
     ...
-    
+
 def add_to_vault():
     ...
 
