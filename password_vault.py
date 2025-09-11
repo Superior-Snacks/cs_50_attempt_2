@@ -6,8 +6,13 @@ import getpass
 import argparse
 import hashlib
 import secrets
+import cryptography
 
+VAULT_DIR = os.path.dirname(os.path.abspath(__file__))
+VAULT_PATH = os.path.join(VAULT_DIR, "vault.json")
+DEFAULT_ITERATIONS = 200_000
 
+#to use
 def setup():
     ...
 
@@ -23,6 +28,7 @@ def read_vault():
     ...
 def write_vault():
     ...
+
 
 def open_vault():
     ...
