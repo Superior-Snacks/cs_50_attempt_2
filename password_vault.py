@@ -54,10 +54,14 @@ def save_to_vault():
     save enrtys
     """
 
-def term_add():
+def term_list():
     """
     """
     
+def term_add():
+    """
+    """
+
 def term_show():
     """
     
