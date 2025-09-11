@@ -38,6 +38,9 @@ def write_vault(p, data):
     with open(p, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
 
+def get_master():
+    ...
+
 def open_vault():
     ...
 def save_to_vault():
