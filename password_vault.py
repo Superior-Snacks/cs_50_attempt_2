@@ -12,6 +12,12 @@ VAULT_DIR = os.path.dirname(os.path.abspath(__file__))
 VAULT_PATH = os.path.join(VAULT_DIR, "vault.json")
 DEFAULT_ITERATIONS = 200_000
 
+
+def key_scram():
+    """
+    salts
+    """
+
 #to use
 def setup():
     """
@@ -57,7 +63,7 @@ def save_to_vault():
 def term_list():
     """
     """
-    
+
 def term_add():
     """
     """
