@@ -75,9 +75,11 @@ def write_vault(p, data):
 
 
 def open_vault(master, vault_data):
-    """
-    UNLOCK
-    """
+    #check if data
+
+
+
+
 def save_to_vault():
     """
     save enrtys
