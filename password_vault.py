@@ -74,7 +74,7 @@ def write_vault(p, data):
             json.dump(data, f, indent=2)
 
 
-def open_vault():
+def open_vault(master, vault_data):
     """
     UNLOCK
     """
