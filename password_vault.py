@@ -20,7 +20,7 @@ def b64d(s):
     return base64.b64decode(s.encode("ascii"))
 
 
-def key_scram():
+def key_scram(master, salt, DEFAULT_ITERATIONS):
     """
     salts
     """
