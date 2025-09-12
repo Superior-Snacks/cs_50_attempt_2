@@ -32,7 +32,9 @@ def setup(args):
     cypher = encrypt(key, entrys)
 
     vault = {
-        
+        "version": 1,
+        "scram" : ...,
+        "cipher": cypher,
     }
 
 
