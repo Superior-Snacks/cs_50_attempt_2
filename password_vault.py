@@ -89,7 +89,11 @@ def create_parser():
     s.set_defaults(func=term_add)
 
     s = sub.add_parser("show", help="Show entry")
+    g = s.add_mutually_exclusive_group(required=True)
+    g.add_argument("--name")
+    g.add_argument("--id")
     s.set_defaults(func=term_show)
+    
 
 def main():
     parser = create_parser()
