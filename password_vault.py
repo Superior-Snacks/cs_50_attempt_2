@@ -12,6 +12,13 @@ VAULT_DIR = os.path.dirname(os.path.abspath(__file__))
 VAULT_PATH = os.path.join(VAULT_DIR, "vault.json")
 DEFAULT_ITERATIONS = 200_000
 
+#a lil help
+def b64e(b):
+    return base64.b64encode(b).decode("ascii")
+
+def b64d(s):
+    return base64.b64decode(s.encode("ascii"))
+
 
 def key_scram():
     """
@@ -36,7 +43,7 @@ def setup(args):
 
     vault = {
         "version": 1,
-        "scram" : {...},
+        "scram" : {"""salt""" "iterations": DEFAULT_ITERATIONS},
         "cipher": cypher,
     }
     write_vault(VAULT_PATH, vault)
