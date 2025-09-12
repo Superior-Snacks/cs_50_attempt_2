@@ -22,6 +22,7 @@ def key_scram():
 def setup(args):
     if os.path.exists(VAULT_PATH):
         sys.exit(1)
+    master = get_master()
 
 
 
