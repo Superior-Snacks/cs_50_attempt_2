@@ -23,6 +23,9 @@ def setup(args):
     if os.path.exists(VAULT_PATH):
         sys.exit(1)
     master = get_master()
+    if not master:
+        print("MASTER PASS REQUIERD")
+        sys.exit(1)
 
 
 
