@@ -81,6 +81,11 @@ def create_parser():
     s.set_defaults(func=setup)
 
     s = sub.add_parser("add", help="add new wntry")
+    #name
+    #username
+    #email? lata?
+    #url
+    #password, allow gen or custom
     s.set_defaults(func=term_add)
 
 
