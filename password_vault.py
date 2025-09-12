@@ -78,7 +78,7 @@ def open_vault(master, vault_data):
     #check if data
     salt_b = vault_data["scarm"]["saltb64d"]
     iterations = int(vault_data["scram"]["iterations"])
-
+    key = key_scram(master, b64d(salt_b), iterations)
 
 
 def save_to_vault():
