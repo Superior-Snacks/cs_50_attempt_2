@@ -26,6 +26,11 @@ def setup(args):
     if not master:
         print("MASTER PASS REQUIERD")
         sys.exit(1)
+    salt = secrets.token_bytes(16)
+    key = key_scram(master, salt, DEFAULT_ITERATIONS)
+    entrys = []
+    cypher = encrypt(key, entrys)
+
 
 
 
