@@ -74,11 +74,11 @@ def term_show():
     """
 
 def create_parser():
-
+    ...
 
 
 
 def main():
-
+    parser = create_parser()
 if __name__ == "__main__":
     main()
