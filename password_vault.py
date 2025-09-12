@@ -96,8 +96,10 @@ def create_parser():
 
     return p
 
-def main():
+def main(argv=None):
     parser = create_parser()
+    args = parser.parse_args(argv)
+    args.func(args)
 
 
 
