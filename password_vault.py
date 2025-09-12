@@ -93,7 +93,8 @@ def create_parser():
     g.add_argument("--name")
     g.add_argument("--id")
     s.set_defaults(func=term_show)
-    
+
+    return p
 
 def main():
     parser = create_parser()
