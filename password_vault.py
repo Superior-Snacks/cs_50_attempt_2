@@ -83,6 +83,7 @@ def create_parser():
     s = sub.add_parser("add", help="add new wntry")
     s.add_argument("--name", required=True)
     s.add_argument("--username", required=True)
+    s.add_argument("--email", default="")
     s.add_argument("--url", default="")
     s.add_argument("--password", help="laev blanc for gen")
     s.set_defaults(func=term_add)
