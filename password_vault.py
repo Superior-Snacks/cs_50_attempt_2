@@ -76,7 +76,7 @@ def write_vault(p, data):
 
 def open_vault(master, vault_data):
     #check if data
-
+    salt_b = vault_data["scarm"]["saltb64d"]
 
 
 
