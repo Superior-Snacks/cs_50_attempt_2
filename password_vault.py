@@ -88,6 +88,8 @@ def create_parser():
     #password, allow gen or custom
     s.set_defaults(func=term_add)
 
+    s = sub.add_parser("show", help="Show entry")
+    s.set_defaults(func=term_show)
 
 def main():
     parser = create_parser()
