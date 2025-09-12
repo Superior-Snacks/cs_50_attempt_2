@@ -77,6 +77,8 @@ def create_parser():
     p = argparse.ArgumentParser(description="MY PASSWORD MANAGER")
     sub = p.add_subparsers(dest="cmd", required=True)
 
+    s = sub.add_parser("init", help="Create new vault.")
+    s.set_defaults(func=setup)
 
 
 def main():
