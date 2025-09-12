@@ -74,7 +74,8 @@ def term_show():
     """
 
 def create_parser():
-    ...
+    p = argparse.ArgumentParser(description="MY PASSWORD MANAGER")
+    sub = p.add_subparsers(dest="cmd", required=True)
 
 
 
