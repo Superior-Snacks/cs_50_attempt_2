@@ -19,10 +19,17 @@ def key_scram():
     """
 
 #to use
-def setup():
-    """
-    the o'l init
-    """
+def setup(args):
+
+
+
+
+
+
+
+
+
+
 # make it safe
 def encrypt():
     """
