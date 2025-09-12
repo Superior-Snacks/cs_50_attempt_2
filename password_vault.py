@@ -18,6 +18,9 @@ def key_scram():
     salts
     """
 
+def get_master():
+    return getpass.getpass("Master password: ")
+
 #to use
 def setup(args):
     if os.path.exists(VAULT_PATH):
@@ -38,13 +41,6 @@ def setup(args):
     }
     write_vault(VAULT_PATH, vault)
     print(f"created vault {VAULT_PATH}")
-
-
-
-
-
-
-
 
 
 
@@ -69,11 +65,6 @@ def read_vault(p):
 def write_vault(p, data):
     with open(p, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
-
-def get_master():
-    """
-    prompt master password
-    """
 
 
 def open_vault():
