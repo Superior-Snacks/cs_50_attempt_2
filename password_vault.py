@@ -31,6 +31,10 @@ def setup(args):
     entrys = []
     cypher = encrypt(key, entrys)
 
+    vault = {
+        
+    }
+
 
 
 
