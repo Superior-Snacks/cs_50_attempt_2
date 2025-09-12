@@ -36,6 +36,8 @@ def setup(args):
         "scram" : {...},
         "cipher": cypher,
     }
+    write_vault(VAULT_PATH, vault)
+    print(f"created vault {VAULT_PATH}")
 
 
 
