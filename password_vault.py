@@ -20,7 +20,8 @@ def key_scram():
 
 #to use
 def setup(args):
-
+    if os.path.exists(VAULT_PATH):
+        sys.exit(1)
 
 
 
