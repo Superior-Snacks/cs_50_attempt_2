@@ -33,7 +33,7 @@ def setup(args):
 
     vault = {
         "version": 1,
-        "scram" : ...,
+        "scram" : {...},
         "cipher": cypher,
     }
 
