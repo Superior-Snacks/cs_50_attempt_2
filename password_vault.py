@@ -53,6 +53,9 @@ def setup(args):
 
 # make it safe
 def encrypt(key, val):
+    iv = secrets.token_bytes(12)
+    aesgcm = AESGCM(key)
+    plaintext = json.dumps(val).encode("utf-8")
 
 #less safe
 def decrypt():
