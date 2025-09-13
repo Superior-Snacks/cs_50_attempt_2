@@ -105,7 +105,8 @@ def term_list(args):
     vault_data = read_vault(VAULT_PATH)
     entries, key, meta = open_vault(master, vault_data)
     if not entries:
-        print("foo, no entrys, that check out?... seems bad")
+        return print("foo, no entrys, that check out?... seems bad")
+
 
 def term_add(args):
     master = get_master()
