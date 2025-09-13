@@ -88,7 +88,10 @@ def open_vault(master, vault_data):
     salt_b = vault_data["scarm"]["saltb64d"]
     iterations = int(vault_data["scram"]["iterations"])
     key = key_scram(master, b64d(salt_b), iterations)
-    entrys = "entry here"
+    entries = decrypt(key,
+        vault_data["cipher"]["iv"],
+        vault_data["cipher"]["ciphertext"]
+        )
 
 
 def save_to_vault():
