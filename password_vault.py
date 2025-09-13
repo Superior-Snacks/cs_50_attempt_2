@@ -57,6 +57,11 @@ def encrypt(key, val):
     iv = secrets.token_bytes(12)
     aesgcm = AESGCM(key)
     plaintext = json.dumps(val).encode("utf-8")
+    ct = aesgcm.encrypt(iv, plaintext, None)
+    return {
+        "iv": b64e(iv),
+        "ciphertext": b64e(ct)
+    }
 
 #less safe
 def decrypt():
