@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import secrets
 import cryptography
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 VAULT_DIR = os.path.dirname(os.path.abspath(__file__))
 VAULT_PATH = os.path.join(VAULT_DIR, "vault.json")
