@@ -107,6 +107,7 @@ def term_list(args):
     if not entries:
         return print("foo, no entrys, that check out?... seems bad")
     for i in entries:
+        print(f"")
 
 
 def term_add(args):
