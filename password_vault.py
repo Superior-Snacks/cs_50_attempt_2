@@ -106,6 +106,7 @@ def term_list(args):
     entries, key, meta = open_vault(master, vault_data)
     if not entries:
         return print("foo, no entrys, that check out?... seems bad")
+    for i in entries:
 
 
 def term_add(args):
