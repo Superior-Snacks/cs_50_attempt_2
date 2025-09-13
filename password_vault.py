@@ -92,6 +92,7 @@ def open_vault(master, vault_data):
         vault_data["cipher"]["iv"],
         vault_data["cipher"]["ciphertext"]
         )
+    return entries, key, vault_data
 
 
 def save_to_vault():
