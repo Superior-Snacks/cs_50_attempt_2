@@ -64,10 +64,12 @@ def encrypt(key, val):
     }
 
 #less safe
-def decrypt():
-    """
-    ======II=======
-    """
+def decrypt(key, iv_str, ct_str):
+    iv = b64d(iv_str)
+    ct = b64d(ct_str)
+    aesgcm = AESGCM(key)
+    pt = aesgcm.decrypt(iv, ct, None)
+    return json.loads(pt.decode("utf-8"))
 
 #open n close
 def read_vault(p):
