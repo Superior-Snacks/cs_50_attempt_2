@@ -52,10 +52,8 @@ def setup(args):
 
 
 # make it safe
-def encrypt():
-    """
-    by the book do not be brave young cunt
-    """
+def encrypt(key, val):
+
 #less safe
 def decrypt():
     """
