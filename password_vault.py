@@ -100,13 +100,12 @@ def save_to_vault():
     save enrtys
     """
 
-def term_list():
-    """
-    """
+def term_list(args):
+    master = get_master()
 
-def term_add():
-    """
-    """
+def term_add(args):
+    master = get_master()
+
 
 def term_show():
     """
