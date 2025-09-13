@@ -102,10 +102,13 @@ def save_to_vault():
 
 def term_list(args):
     master = get_master()
+    vault_data = read_vault(VAULT_PATH)
+    entries, key, meta = open_vault(master, vault_data)
 
 def term_add(args):
     master = get_master()
-
+    vault_data = read_vault(VAULT_PATH)
+    entries, key, meta = open_vault(master, vault_data)
 
 def term_show():
     """
