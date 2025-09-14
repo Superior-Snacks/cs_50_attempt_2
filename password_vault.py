@@ -124,14 +124,14 @@ def term_add(args):
     print(f"Added '{new_entry['name']}'.")
 
 
-def term_show():
+def term_show(args):
     master = get_master()
     vault_data = read_vault(VAULT_PATH)
     entries, key, meta = open_vault(master, vault_data)
 
     goal = None
     for i in entries:
-
+        if args.id == i["id"]
 
 
 
