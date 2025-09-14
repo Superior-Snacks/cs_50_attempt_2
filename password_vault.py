@@ -131,6 +131,7 @@ def term_show(args):
     vault_data = read_vault(VAULT_PATH)
     entries, key, meta = open_vault(master, vault_data)
 
+    found = False
     for i in entries:
         if (args.id == i["id"]) or (args.name == i["name"]):
             print(json.dumps(i, indent=2))
