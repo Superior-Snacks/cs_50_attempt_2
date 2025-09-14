@@ -95,7 +95,7 @@ def open_vault(master, vault_data):
     return entries, key, vault_data
 
 
-def save_to_vault():
+def save_to_vault(entries, key, vault_data):
 
 
 def term_list(args):
