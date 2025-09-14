@@ -116,8 +116,13 @@ def term_add(args):
         "id": secrets.token_hex(16),
         "name": args.name.strip(),
         "username": args.username.strip(),
+        "email": (args.email or "").strip(),
+        "url": (args.url or "").strip(),
+        "password": args.password if args.password else "changeme123!"
     }
-
+    entries.append(new_entry)
+    save_to_vault(entries, key, meta)
+    print(f"Added '{new_entry['name']}'.")
 
 
 def term_show():
