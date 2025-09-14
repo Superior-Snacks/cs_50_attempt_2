@@ -12,9 +12,10 @@ VAULT_DIR = os.path.dirname(os.path.abspath(__file__))
 VAULT_PATH = os.path.join(VAULT_DIR, "vault.json")
 DEFAULT_ITERATIONS = 200_000
 
-#a lil help
+
 def b64e(b):
     return base64.b64encode(b).decode("ascii")
+
 
 def b64d(s):
     return base64.b64decode(s.encode("ascii"))
@@ -23,10 +24,11 @@ def b64d(s):
 def key_scram(master, salt, DEFAULT_ITERATIONS):
     return hashlib.pbkdf2_hmac("sha256", master.encode("utf-8"), salt, DEFAULT_ITERATIONS, dklen=32)
 
+
 def get_master():
     return getpass.getpass("Master password: ")
 
-#to use
+
 def setup(args):
     if os.path.exists(VAULT_PATH):
         sys.exit(1)
@@ -48,8 +50,6 @@ def setup(args):
     print(f"created vault {VAULT_PATH}")
 
 
-
-# make it safe
 def encrypt(key, val):
     iv = secrets.token_bytes(12)
     aesgcm = AESGCM(key)
@@ -60,7 +60,7 @@ def encrypt(key, val):
         "ciphertext": b64e(ct)
     }
 
-#less safe
+
 def decrypt(key, iv_str, ct_str):
     iv = b64d(iv_str)
     ct = b64d(ct_str)
@@ -68,13 +68,14 @@ def decrypt(key, iv_str, ct_str):
     pt = aesgcm.decrypt(iv, ct, None)
     return json.loads(pt.decode("utf-8"))
 
-#open n close
+
 def read_vault(p):
     if not os.path.exists(p):
         return {}
     with open(p, "r", encoding="utf-8") as f:
         return json.load(f)
     
+
 def write_vault(p, data):
     with open(p, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
@@ -96,6 +97,7 @@ def save_to_vault(entries, key, vault_data):
     cipher = encrypt(key, entries)
     vault_data["cipher"] = cipher
     write_vault(VAULT_PATH, vault_data)
+
 
 def term_list(args):
     master = get_master()
@@ -138,9 +140,6 @@ def term_show(args):
         sys.exit(1)
 
 
-
-
-
 def create_parser():
     p = argparse.ArgumentParser(description="MY PASSWORD MANAGER")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -167,12 +166,10 @@ def create_parser():
 
     return p
 
+
 def main(argv=None):
     parser = create_parser()
     args = parser.parse_args(argv)
     args.func(args)
-
-
-
 if __name__ == "__main__":
     main()
