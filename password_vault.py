@@ -43,7 +43,7 @@ def setup(args):
 
     vault = {
         "version": 1,
-        "scram" : {"salt_b64d":b64e(salt), "iterations": DEFAULT_ITERATIONS},
+        "scram" : {"salt_b64e":b64e(salt), "iterations": DEFAULT_ITERATIONS},
         "cipher": cypher,
     }
     write_vault(VAULT_PATH, vault)
@@ -83,7 +83,7 @@ def write_vault(p, data):
 
 def open_vault(master, vault_data):
     #check if data
-    salt_b = vault_data["scarm"]["saltb64d"]
+    salt_b = vault_data["scarm"]["salt_b64e"]
     iterations = int(vault_data["scram"]["iterations"])
     key = key_scram(master, b64d(salt_b), iterations)
     entries = decrypt(key,
