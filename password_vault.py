@@ -132,7 +132,11 @@ def term_show(args):
     for i in entries:
         if (args.id == i["id"]) or (args.name == i["name"]):
             print(json.dumps(i, indent=2))
-            
+            found = True
+    if not found:
+        print("entry not found")
+        sys.exit(1)
+
 
 
 
