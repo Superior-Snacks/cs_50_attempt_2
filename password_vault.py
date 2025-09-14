@@ -83,7 +83,7 @@ def write_vault(p, data):
 
 def open_vault(master, vault_data):
     #check if data
-    salt_b = vault_data["scarm"]["salt_b64e"]
+    salt_b = vault_data["scram"]["salt_b64e"]
     iterations = int(vault_data["scram"]["iterations"])
     key = key_scram(master, b64d(salt_b), iterations)
     entries = decrypt(key,
