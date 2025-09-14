@@ -125,9 +125,9 @@ def term_add(args):
 
 
 def term_show():
-    """
-    
-    """
+    master = get_master()
+    vault_data = read_vault(VAULT_PATH)
+    entries, key, meta = open_vault(master, vault_data)
 
 def create_parser():
     p = argparse.ArgumentParser(description="MY PASSWORD MANAGER")
