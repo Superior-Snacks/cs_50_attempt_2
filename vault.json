@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "scram": {
+    "salt_b64e": "lXn5/ADt6ww6teEz/v35xA==",
+    "iterations": 200000
+  },
+  "cipher": {
+    "iv": "XMWJTDiL8wyO1yyI",
+    "ciphertext": "XZlvOL0tKtSvXsogTo9Z5ohz"
+  }
+}
