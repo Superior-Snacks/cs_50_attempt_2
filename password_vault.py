@@ -22,9 +22,7 @@ def b64d(s):
 
 
 def key_scram(master, salt, DEFAULT_ITERATIONS):
-    """
-    salts
-    """
+    return hashlib.pbkdf2_hmac("sha256", master.encode("utf-8"), salt, DEFAULT_ITERATIONS, dklen=32)
 
 def get_master():
     return getpass.getpass("Master password: ")
