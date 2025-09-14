@@ -113,7 +113,9 @@ def term_add(args):
     vault_data = read_vault(VAULT_PATH)
     entries, key, meta = open_vault(master, vault_data)
     new_entry = {
-
+        "id": secrets.token_hex(16),
+        "name": args.name.strip(),
+        "username": args.username.strip(),
     }
 
 
