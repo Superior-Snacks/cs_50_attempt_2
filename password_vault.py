@@ -6,7 +6,6 @@ import getpass
 import argparse
 import hashlib
 import secrets
-import cryptography
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 VAULT_DIR = os.path.dirname(os.path.abspath(__file__))
