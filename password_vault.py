@@ -96,9 +96,7 @@ def open_vault(master, vault_data):
 
 
 def save_to_vault():
-    """
-    save enrtys
-    """
+
 
 def term_list(args):
     master = get_master()
@@ -107,7 +105,7 @@ def term_list(args):
     if not entries:
         return print("foo, no entrys, that check out?... seems bad")
     for i in entries:
-        print(f"")
+        print(f"name:{i['name']}, username:{i['username']}, email:{i['email']}, url:{i['url']}")
 
 
 def term_add(args):
