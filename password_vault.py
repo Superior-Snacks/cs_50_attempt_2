@@ -96,7 +96,9 @@ def open_vault(master, vault_data):
 
 
 def save_to_vault(entries, key, vault_data):
-
+    cipher = encrypt(key, entries)
+    vault_data["cipher"] = cipher
+    write_vault(VAULT_PATH, vault_data)
 
 def term_list(args):
     master = get_master()
