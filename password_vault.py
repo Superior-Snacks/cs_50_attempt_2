@@ -136,6 +136,9 @@ def create_parser():
     s = sub.add_parser("init", help="Create new vault.")
     s.set_defaults(func=setup)
 
+    s = sub.add_parser("list", help="List entries.")
+    s.set_defaults(func=term_list)
+
     s = sub.add_parser("add", help="add new wntry")
     s.add_argument("--name", required=True)
     s.add_argument("--username", required=True)
