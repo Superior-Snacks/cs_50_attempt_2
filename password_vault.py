@@ -129,6 +129,12 @@ def term_show():
     vault_data = read_vault(VAULT_PATH)
     entries, key, meta = open_vault(master, vault_data)
 
+    goal = None
+    for i in entries:
+
+
+
+
 def create_parser():
     p = argparse.ArgumentParser(description="MY PASSWORD MANAGER")
     sub = p.add_subparsers(dest="cmd", required=True)
