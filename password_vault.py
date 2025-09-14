@@ -41,7 +41,7 @@ def setup(args):
 
     vault = {
         "version": 1,
-        "scram" : {"salt_b64d":b64d(salt), "iterations": DEFAULT_ITERATIONS},
+        "scram" : {"salt_b64d":b64e(salt), "iterations": DEFAULT_ITERATIONS},
         "cipher": cypher,
     }
     write_vault(VAULT_PATH, vault)
