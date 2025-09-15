@@ -149,7 +149,7 @@ def term_add(args):
         "username": args.username.strip(),
         "email": (args.email or "").strip(),
         "url": (args.url or "").strip(),
-        "password": args.password if args.password else password_generator(length=20, no_symbols=False)
+        "password": args.password if args.password else password_generator(length=args.length, no_symbols=args.no_symbols)
     }
     entries.append(new_entry)
     save_to_vault(entries, key, meta)
