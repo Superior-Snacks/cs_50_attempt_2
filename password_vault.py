@@ -212,7 +212,8 @@ def term_edit(args):
         if args.password is not None:
             updates["password"] = args.password
 
-        for i in updates:
+        for i,j in updates.items:
+            old[i] = args.j
 
     save_to_vault(new_entries, key, meta)
 
