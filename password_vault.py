@@ -144,6 +144,7 @@ def term_delete(args):
         print("Multiple entries found, please be more precise")
         for i in found:
             print(json.dumps(i, indent=2))
+        return
     elif len(found) == 1:
         for i in entries:
             if i == found[0]:
