@@ -307,7 +307,8 @@ def create_parser():
 
     s = sub.add_parser("generate", help="if you need a password")
     s.add_argument("--length", type=int, default=20)
-    s.set_defaults(func=password_generator)
+    s.add_argument("--count", type=int, default=1)
+    s.set_defaults(func=term_generate)
 
 
 
