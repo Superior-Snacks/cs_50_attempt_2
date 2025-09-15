@@ -126,6 +126,10 @@ def term_add(args):
     print(f"Added '{new_entry['name']}'.")
 
 
+def term_delete(args):
+    ...
+
+
 def term_show(args):
     master = get_master()
     vault_data = read_vault(VAULT_PATH)
