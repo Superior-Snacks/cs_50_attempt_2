@@ -214,15 +214,8 @@ def term_edit(args):
         if not updates:
             print("no updates selected")
             return
-
-        for i,j in updates.items():
-            old[i] = j
-
-        for k in entries:
-            if k == found[0]:
-                new_entries.append(old)
-            else:
-                new_entries.append(entries)
+        
+        old.update(updates)
 
     save_to_vault(new_entries, key, meta)
 
