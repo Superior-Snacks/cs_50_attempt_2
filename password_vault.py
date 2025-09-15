@@ -143,6 +143,9 @@ def term_delete(args):
         print(f"{found[0]["name"]} has been deleted")
     elif len(found) > 1:
         print("Multiple entries found, please be more precise")
+        for i in found:
+            print(json.dumps(i, indent=2))
+        
 
 def term_show(args):
     master = get_master()
