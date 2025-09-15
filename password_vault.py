@@ -45,7 +45,8 @@ def password_generator(length=20):
         secrets.choice(symbols)
     ]
     rem = length - len(password)
-
+    for i in range(rem):
+        password += secrets.choice(all)
 
 
 def setup(args):
