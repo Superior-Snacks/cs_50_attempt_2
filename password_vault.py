@@ -184,6 +184,7 @@ def term_edit(args):
         sys.exit(1)
 
     new_entries = []
+    confirm = False
     if len(found) > 1:
         print("Multiple entries found, please be more precise use id")
         for i in found:
@@ -194,13 +195,7 @@ def term_edit(args):
         print(json.dumps(found[0], indent=2))
         confirm = input("confirm edit of entry: ")
         if confirm.lower in ["yes", "y", "confirm"]:
-            old[args.replace[0]] = args.replace[1]
-            for i in entries:
-                if i == found[0]:
-                    new_entries.append(old)
-                else:
-                    new_entries.append(i)
-                print(f"{found[0][args.replace[0]]} has been updated to {old[args.replace[0]]}")
+            confirm = True
         else:
             print("cancelled")
             return
