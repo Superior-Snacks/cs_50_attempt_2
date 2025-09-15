@@ -170,8 +170,8 @@ def term_delete(args):
     save_to_vault(new_entries, key, meta)
 
 
-    def term_edit(args):
-        ...
+def term_edit(args):
+    ...
 
 
 def term_show(args):
@@ -215,6 +215,7 @@ def create_parser():
 
     s = sub.add_parser("edit", help="edit an entry")
     g = s.add_mutually_exclusive_group(required=True)
+    s.set_defaults(func=term_edit)
 
     s = sub.add_parser("show", help="Show entry")
     g = s.add_mutually_exclusive_group(required=True)
