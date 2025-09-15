@@ -250,12 +250,9 @@ def term_show(args):
 
 def term_generate(args):
     try:
-        if args.count:
-            for i in range(args.count):
-                password = password_generator(length=args.length)
-                print(password)
-        else:
-            print(password_generator(length=args.length))
+        for i in range(args.count):
+            password = password_generator(length=args.length)
+            print(password)
     except ValueError:
         print("error")
         return
