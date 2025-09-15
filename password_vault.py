@@ -31,7 +31,7 @@ def get_master():
     return getpass.getpass("Master password: ")
 
 
-def password_generator(length=20):
+def password_generator(length=20, no_symbols=False):
     lowers = string.ascii_lowercase
     uppers = string.ascii_uppercase
     digits = string.digits
