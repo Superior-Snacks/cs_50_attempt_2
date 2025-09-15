@@ -213,6 +213,9 @@ def create_parser():
     g.add_argument("--name")
     s.set_defaults(func=term_delete)
 
+    s = sub.add_parser("edit", help="edit an entry")
+    g = s.add_mutually_exclusive_group(required=True)
+
     s = sub.add_parser("show", help="Show entry")
     g = s.add_mutually_exclusive_group(required=True)
     g.add_argument("--name")
