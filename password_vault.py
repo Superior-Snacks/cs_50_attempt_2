@@ -250,6 +250,7 @@ def create_parser():
     g = s.add_mutually_exclusive_group(required=True)
     g.add_argument("--id")
     g.add_argument("--name")
+    s.add_argument("--edit", required=True)
     s.set_defaults(func=term_edit)
 
     s = sub.add_parser("show", help="Show entry")
