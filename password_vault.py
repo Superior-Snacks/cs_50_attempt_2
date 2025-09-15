@@ -194,7 +194,7 @@ def term_edit(args):
         print(json.dumps(found[0], indent=2))
         confirm = input("confirm edit of entry: ")
         if confirm.lower() in ["yes", "y", "confirm"]:
-            confirm = True
+            ok = True
         else:
             print("cancelled")
             return
