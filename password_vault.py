@@ -191,7 +191,6 @@ def term_edit(args):
             print(json.dumps(i, indent=2))
         return
     elif len(found) == 1:
-        old = found[0]
         print(json.dumps(found[0], indent=2))
         confirm = input("confirm edit of entry: ")
         if confirm.lower in ["yes", "y", "confirm"]:
@@ -200,6 +199,7 @@ def term_edit(args):
             print("cancelled")
             return
     if confirm:
+        old = found[0]
         updates = {}
         if args.name_new is not None:
             updates["name"] = args.name_new.strip()
