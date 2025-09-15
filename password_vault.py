@@ -131,13 +131,12 @@ def term_delete(args):
     vault_data = read_vault(VAULT_PATH)
     entries, key, meta = open_vault(master, vault_data)
 
-    found = False
+    found = []
     for i in entries:
         if (args.id == i["id"]) or (args.name == i["name"]):
             print(json.dumps(i, indent=2))
-            found = True
     if not found:
-        print("entry not found")
+        print("entry to delete not found")
         sys.exit(1)
 
 
