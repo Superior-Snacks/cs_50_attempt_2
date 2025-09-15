@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import secrets
 import string
+import random
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 VAULT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -35,6 +36,7 @@ def password_generator():
     uppers = string.ascii_uppercase
     digits = string.digits
     symbols = "!@#$%^&*()-_=+[]{};:,.?/"
+
 
 
 def setup(args):
