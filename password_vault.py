@@ -182,8 +182,6 @@ def term_edit(args):
     if not found:
         print("entry to delete not found")
         sys.exit(1)
-
-    new_entries = []
     ok = False
     if len(found) > 1:
         print("Multiple entries found, please be more precise use id")
@@ -214,9 +212,8 @@ def term_edit(args):
         if not updates:
             print("no updates selected")
             return
-        
         old.update(updates)
-
+        print(f"updated to {old["name"]}")
     save_to_vault(entries, key, meta)
 
 def term_show(args):
