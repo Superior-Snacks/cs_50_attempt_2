@@ -185,7 +185,7 @@ def term_edit(args):
 
     new_entries = []
     if len(found) > 1:
-        print("Multiple entries found, please be more precise")
+        print("Multiple entries found, please be more precise use id")
         for i in found:
             print(json.dumps(i, indent=2))
         return
