@@ -138,19 +138,19 @@ def term_delete(args):
     if not found:
         print("entry to delete not found")
         sys.exit(1)
-        
+
     new_entries = []
-    if len(found) == 1:
+    if len(found) > 1:
+        print("Multiple entries found, please be more precise")
+        for i in found:
+            print(json.dumps(i, indent=2))
+    elif len(found) == 1:
         for i in entries:
             if i == found[0]:
                 continue
             else:
                 new_entries.append(i)
-        print(f"{found[0]["name"]} has been deleted")
-    elif len(found) > 1:
-        print("Multiple entries found, please be more precise")
-        for i in found:
-            print(json.dumps(i, indent=2))
+            print(f"{found[0]["name"]} has been deleted")
 
     save_to_vault(new_entries, key, meta)
         
