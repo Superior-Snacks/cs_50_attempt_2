@@ -171,8 +171,41 @@ def term_delete(args):
 
 
 def term_edit(args):
-    ...
+    master = get_master()
+    vault_data = read_vault(VAULT_PATH)
+    entries, key, meta = open_vault(master, vault_data)
 
+    found = []
+    for i in entries:
+        if (args.id == i["id"]) or (args.name == i["name"]):
+            found.append(i)
+    if not found:
+        print("entry to delete not found")
+        sys.exit(1)
+
+    new_entries = []
+    if len(found) > 1:
+        print("Multiple entries found, please be more precise")
+        for i in found:
+            print(json.dumps(i, indent=2))
+        return
+    elif len(found) == 1:
+        old = found[0]
+        print(json.dumps(found[0], indent=2))
+        confirm = input("confirm edit of entry: ")
+        if confirm.lower in ["yes", "y", "confirm"]:
+            old[args.replace[0]] = args.replace[1]
+            for i in entries:
+                if i == new:
+                    continue
+                else:
+                    new_entries.append(i)
+                print(f"{new["next"]} has been deleted")
+        else:
+            print("cancelled")
+            return
+
+    save_to_vault(new_entries, key, meta)
 
 def term_show(args):
     master = get_master()
