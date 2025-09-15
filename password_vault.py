@@ -209,12 +209,13 @@ def term_edit(args):
             updates["url"] = args.url.strip()
         if args.password is not None:
             updates["password"] = args.password
-        if not updates:
-            print("no updates selected")
+        if updates:
+            old.update(updates)
+            print(f"updated to {old["name"]}")
+            save_to_vault(entries, key, meta)
+        else:
+            print("no updates?")
             return
-        old.update(updates)
-        print(f"updated to {old["name"]}")
-    save_to_vault(entries, key, meta)
 
 def term_show(args):
     master = get_master()
