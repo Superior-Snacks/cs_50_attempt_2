@@ -134,7 +134,7 @@ def term_delete(args):
     found = []
     for i in entries:
         if (args.id == i["id"]) or (args.name == i["name"]):
-            print(json.dumps(i, indent=2))
+            found.append(i)
     if not found:
         print("entry to delete not found")
         sys.exit(1)
