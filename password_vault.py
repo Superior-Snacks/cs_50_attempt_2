@@ -198,7 +198,7 @@ def term_edit(args):
         else:
             print("cancelled")
             return
-    if on:
+    if ok:
         old = found[0]
         updates = {}
         if args.name_new is not None:
