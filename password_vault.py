@@ -154,7 +154,7 @@ def term_delete(args):
                     continue
                 else:
                     new_entries.append(i)
-                print(f"{found[0]["name"]} has been deleted")
+                print(f"{found[0].get("name")} has been deleted")
         else:
             print("cancelled")
             return
