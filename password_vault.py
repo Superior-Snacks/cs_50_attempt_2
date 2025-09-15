@@ -29,6 +29,10 @@ def get_master():
     return getpass.getpass("Master password: ")
 
 
+def password_generator():
+    ...
+
+
 def setup(args):
     if os.path.exists(VAULT_PATH):
         sys.exit(1)
@@ -123,7 +127,7 @@ def term_add(args):
         "username": args.username.strip(),
         "email": (args.email or "").strip(),
         "url": (args.url or "").strip(),
-        "password": args.password if args.password else "changeme123!"
+        "password": args.password if args.password else password_generator()
     }
     entries.append(new_entry)
     save_to_vault(entries, key, meta)
