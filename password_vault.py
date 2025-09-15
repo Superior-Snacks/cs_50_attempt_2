@@ -213,7 +213,13 @@ def term_edit(args):
             updates["password"] = args.password
 
         for i,j in updates.items:
-            old[i] = args.j
+            old[i] = j
+
+        for k in entries:
+            if k == found[0]:
+                new_entries.append(old)
+            else:
+                new_entries.append(entries)
 
     save_to_vault(new_entries, key, meta)
 
