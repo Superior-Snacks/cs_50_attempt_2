@@ -279,6 +279,8 @@ def create_parser():
     s.add_argument("--email", default="")
     s.add_argument("--url", default="")
     s.add_argument("--password", help="laev blanc for gen")
+    s.add_argument("--lenght", type=int, default=20)
+    s.add_argument("--no_symbols", action="store_true")
     s.set_defaults(func=term_add)
 
     s = sub.add_parser("delete", help="delete enrtry")
