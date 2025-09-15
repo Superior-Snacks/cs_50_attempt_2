@@ -199,6 +199,8 @@ def term_edit(args):
         else:
             print("cancelled")
             return
+    if confirm:
+        
 
     save_to_vault(new_entries, key, meta)
 
