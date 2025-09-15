@@ -200,7 +200,19 @@ def term_edit(args):
             print("cancelled")
             return
     if confirm:
-        
+        updates = {}
+        if args.name_new is not None:
+            updates["name"] = args.name_new.strip()
+        if args.username is not None:
+            updates["username"] = args.username.strip()
+        if args.email is not None:
+            updates["email"] = args.email.strip()
+        if args.url is not None:
+            updates["url"] = args.url.strip()
+        if args.password is not None:
+            updates["password"] = args.password
+
+        for i in updates:
 
     save_to_vault(new_entries, key, meta)
 
