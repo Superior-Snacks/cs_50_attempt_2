@@ -231,8 +231,9 @@ def term_edit(args):
             updates["url"] = args.url.strip()
         if args.generate is not False:
             updates["password"] = password_generator(length=args.length, no_symbols=args.no_symbols)
-        if args.password is not None:
-            updates["password"] = args.password
+        else:
+            if args.password is not None:
+                updates["password"] = args.password
         if updates:
             old.update(updates)
             print(f"updated to {old["name"]}")
