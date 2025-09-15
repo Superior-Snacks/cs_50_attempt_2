@@ -50,8 +50,8 @@ def password_generator(length=20, no_symbols=False):
 
     rem = length - len(password)
     for i in range(rem):
-        password += secrets.choice(all)
-        random.shuffle(password)
+        password.append(secrets.choice(all))
+    random.shuffle(password)
     return "".join(password)
 
 
