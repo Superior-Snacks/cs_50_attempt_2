@@ -263,7 +263,7 @@ def create_parser():
     g.add_argument("--id")
     g.add_argument("--name")
 
-    s.add_argument("--name-new", help="Rename the entry (new name).")
+    s.add_argument("--name_new", help="Rename the entry (new name).")
     s.add_argument("--username")
     s.add_argument("--email")
     s.add_argument("--url")
