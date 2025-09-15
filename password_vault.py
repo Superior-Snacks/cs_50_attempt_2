@@ -236,7 +236,8 @@ def term_edit(args):
                 updates["password"] = args.password
         if updates:
             old.update(updates)
-            print(f"updated to {old["name"]}")
+            print(json.dumps(old, indent=2))
+            print("updated entry")
             save_to_vault(entries, key, meta)
         else:
             print("no updates?")
