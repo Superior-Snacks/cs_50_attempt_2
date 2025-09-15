@@ -44,6 +44,7 @@ def password_generator(length=20):
         secrets.choice(digits),
         secrets.choice(symbols)
     ]
+    rem = length - len(password)
 
 
 
