@@ -37,7 +37,7 @@ def password_generator(length=20, no_symbols=False):
     digits = string.digits
     symbols = "!@#$%^&*()-_=+[]{};:,.?/"
     all = lowers + uppers + digits
-    if no_symbols:
+    if not no_symbols:
         all += symbols
 
     password = [
@@ -45,9 +45,9 @@ def password_generator(length=20, no_symbols=False):
         secrets.choice(uppers),
         secrets.choice(digits),
     ]
-    if no_symbols:
+    if not no_symbols:
         password.append(secrets.choice(symbols))
-        
+
     rem = length - len(password)
     for i in range(rem):
         password += secrets.choice(all)
