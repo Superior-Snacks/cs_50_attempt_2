@@ -301,7 +301,7 @@ def create_parser():
     s.add_argument("--username")
     s.add_argument("--email")
     s.add_argument("--url")
-    s.add_argument("--generate")
+    s.add_argument("--generate", type=bool)
     s.add_argument("--length", type=int, default=20)
     s.add_argument("--no_symbols", action="store_true")
     s.add_argument("--password")
