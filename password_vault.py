@@ -36,10 +36,9 @@ def password_generator(length=20):
     uppers = string.ascii_uppercase
     digits = string.digits
     symbols = "!@#$%^&*()-_=+[]{};:,.?/"
+    all = lowers + uppers + digits + symbols
 
-    password = ""
-
-    for i in range(length):
+    for i in range("hello"):
 
 
 
