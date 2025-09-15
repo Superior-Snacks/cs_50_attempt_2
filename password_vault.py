@@ -211,8 +211,11 @@ def term_edit(args):
             updates["url"] = args.url.strip()
         if args.password is not None:
             updates["password"] = args.password
+        if not updates:
+            print("no updates selected")
+            return
 
-        for i,j in updates.items:
+        for i,j in updates.items():
             old[i] = j
 
         for k in entries:
