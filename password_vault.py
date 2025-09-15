@@ -92,6 +92,8 @@ def open_vault(master, vault_data):
             vault_data["cipher"]["ciphertext"]
             )
     except Exception:
+        print("Wrong master password or corruped file :(")
+        sys.exit(1)
     return entries, key, vault_data
 
 
