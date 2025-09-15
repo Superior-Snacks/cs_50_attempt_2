@@ -164,7 +164,11 @@ def term_delete(args):
             return
 
     save_to_vault(new_entries, key, meta)
-        
+
+
+    def term_edit(args):
+        ...
+
 
 def term_show(args):
     master = get_master()
