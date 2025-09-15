@@ -229,7 +229,7 @@ def term_edit(args):
             updates["email"] = args.email.strip()
         if args.url is not None:
             updates["url"] = args.url.strip()
-        if args.generate is not False:
+        if args.generate:
             updates["password"] = password_generator(length=args.length, no_symbols=args.no_symbols)
         else:
             if args.password is not None:
@@ -305,7 +305,7 @@ def create_parser():
     pw = s.add_mutually_exclusive_group()
     pw.add_argument("--password", help="Set a new password explicitly.")
     pw.add_argument("--generate", action="store_true")
-    
+
     s.add_argument("--length", type=int, default=20)
     s.add_argument("--no_symbols", action="store_true")
     s.set_defaults(func=term_edit)
