@@ -141,7 +141,7 @@ def term_delete(args):
     
     if len(found) == 1:
         print(f"{found[0]["name"]} has been deleted")
-
+    elif len(found) > 1:
 
 def term_show(args):
     master = get_master()
