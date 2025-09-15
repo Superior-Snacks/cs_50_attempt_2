@@ -196,11 +196,11 @@ def term_edit(args):
         if confirm.lower in ["yes", "y", "confirm"]:
             old[args.replace[0]] = args.replace[1]
             for i in entries:
-                if i == new:
-                    continue
+                if i == found[0]:
+                    new_entries.append(old)
                 else:
                     new_entries.append(i)
-                print(f"{new["next"]} has been deleted")
+                print(f"{found[0][args.replace[0]]} has been updated to {old[args.replace[0]]}")
         else:
             print("cancelled")
             return
