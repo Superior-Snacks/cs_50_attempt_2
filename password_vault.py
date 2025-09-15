@@ -36,14 +36,18 @@ def password_generator(length=20, no_symbols=False):
     uppers = string.ascii_uppercase
     digits = string.digits
     symbols = "!@#$%^&*()-_=+[]{};:,.?/"
-    all = lowers + uppers + digits + symbols
+    all = lowers + uppers + digits
+    if no_symbols:
+        all += symbols
 
     password = [
         secrets.choice(lowers),
         secrets.choice(uppers),
         secrets.choice(digits),
-        secrets.choice(symbols)
     ]
+    if no_symbols:
+        password.append(secrets.choice(symbols))
+        
     rem = length - len(password)
     for i in range(rem):
         password += secrets.choice(all)
