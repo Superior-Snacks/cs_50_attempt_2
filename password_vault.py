@@ -141,7 +141,7 @@ def term_delete(args):
 
     found = []
     for i in entries:
-        if (args.id == i["id"]) or (args.name == i["name"]):
+        if args.id and ( args.id == i["id"]) or args.name and (args.name == i["name"]):
             found.append(i)
     if not found:
         print("entry to delete not found")
@@ -177,7 +177,7 @@ def term_edit(args):
 
     found = []
     for i in entries:
-        if (args.id == i["id"]) or (args.name == i["name"]):
+        if args.id and ( args.id == i["id"]) or args.name and (args.name == i["name"]):
             found.append(i)
     if not found:
         print("entry to delete not found")
