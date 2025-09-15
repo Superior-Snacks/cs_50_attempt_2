@@ -146,6 +146,8 @@ def term_delete(args):
             print(json.dumps(i, indent=2))
         return
     elif len(found) == 1:
+        print(json.dumps(found[0], indent=2))
+        confirm = input()
         for i in entries:
             if i == found[0]:
                 continue
