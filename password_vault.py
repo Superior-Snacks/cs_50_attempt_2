@@ -217,7 +217,7 @@ def term_edit(args):
         
         old.update(updates)
 
-    save_to_vault(new_entries, key, meta)
+    save_to_vault(entries, key, meta)
 
 def term_show(args):
     master = get_master()
