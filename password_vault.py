@@ -229,6 +229,8 @@ def term_edit(args):
             updates["email"] = args.email.strip()
         if args.url is not None:
             updates["url"] = args.url.strip()
+        if args.generate is not False:
+            updates["password"] = password_generator(length=args.length, no_symbols=args.no_symbols)
         if args.password is not None:
             updates["password"] = args.password
         if updates:
