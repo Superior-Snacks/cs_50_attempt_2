@@ -256,7 +256,7 @@ def term_show(args):
 def term_generate(args):
     try:
         for i in range(args.count):
-            password = password_generator(length=args.length)
+            password = password_generator(length=args.length, no_symbols=args.no_symbols)
             print(password)
     except ValueError:
         print("error")
@@ -310,7 +310,7 @@ def create_parser():
     s = sub.add_parser("generate", help="if you need a password")
     s.add_argument("--length", type=int, default=20)
     s.add_argument("--count", type=int, default=1)
-    s.add_argument("--no_symbol")
+    s.add_argument("--no_symbols", action="store_true")
     s.set_defaults(func=term_generate)
 
 
