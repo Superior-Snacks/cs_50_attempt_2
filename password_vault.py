@@ -248,6 +248,18 @@ def term_show(args):
         print("entry not found")
         sys.exit(1)
 
+def term_generate(args):
+    try:
+        if args.count:
+            for i in range(args.count):
+                password = password_generator(length=args.length)
+                print(password)
+        else:
+            print(password_generator(length=args.length))
+    except ValueError:
+        print("error")
+        return
+
 
 def create_parser():
     p = argparse.ArgumentParser(description="MY PASSWORD MANAGER")
