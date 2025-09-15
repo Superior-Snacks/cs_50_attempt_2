@@ -38,7 +38,12 @@ def password_generator(length=20):
     symbols = "!@#$%^&*()-_=+[]{};:,.?/"
     all = lowers + uppers + digits + symbols
 
-    for i in range("hello"):
+    password = [
+        secrets.choice(lowers),
+        secrets.choice(uppers),
+        secrets.choice(digits),
+        secrets.choice(symbols)
+    ]
 
 
 
