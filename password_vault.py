@@ -250,7 +250,13 @@ def create_parser():
     g = s.add_mutually_exclusive_group(required=True)
     g.add_argument("--id")
     g.add_argument("--name")
-    s.add_argument("--edit", required=True)
+
+    s.add_argument("--name-new", help="Rename the entry (new name).")
+    s.add_argument("--username")
+    s.add_argument("--email")
+    s.add_argument("--url")
+    s.add_argument("--password", help="laev blanc for gen")
+
     s.set_defaults(func=term_edit)
 
     s = sub.add_parser("show", help="Show entry")
