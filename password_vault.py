@@ -138,6 +138,9 @@ def term_delete(args):
     if not found:
         print("entry to delete not found")
         sys.exit(1)
+    
+    if len(found) == 1:
+        print(f"{found[0]["name"]} has been deleted")
 
 
 def term_show(args):
