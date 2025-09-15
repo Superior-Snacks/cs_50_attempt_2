@@ -47,7 +47,7 @@ def password_generator(length=20):
     rem = length - len(password)
     for i in range(rem):
         password += secrets.choice(all)
-    return password
+    return "".join(password)
 
 
 def setup(args):
