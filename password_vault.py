@@ -301,11 +301,13 @@ def create_parser():
     s.add_argument("--username")
     s.add_argument("--email")
     s.add_argument("--url")
-    s.add_argument("--generate", type=bool)
+
+    pw = s.add_mutually_exclusive_group()
+    pw.add_argument("--password", help="Set a new password explicitly.")
+    pw.add_argument("--generate", action="store_true")
+    
     s.add_argument("--length", type=int, default=20)
     s.add_argument("--no_symbols", action="store_true")
-    s.add_argument("--password")
-
     s.set_defaults(func=term_edit)
 
     s = sub.add_parser("show", help="Show entry")
