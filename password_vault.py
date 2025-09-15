@@ -37,6 +37,8 @@ def password_generator(length=20):
     digits = string.digits
     symbols = "!@#$%^&*()-_=+[]{};:,.?/"
 
+    for i in range(length):
+
 
 
 def setup(args):
