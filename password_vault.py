@@ -292,6 +292,13 @@ def create_parser():
     g.add_argument("--id")
     s.set_defaults(func=term_show)
 
+
+    s = sub.add_parser("generate", help="if you need a password")
+    s.add_argument("--length", type=int)
+    s.set_defaults(func=password_generator)
+
+
+
     return p
 
 
