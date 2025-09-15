@@ -147,13 +147,14 @@ def term_delete(args):
         return
     elif len(found) == 1:
         print(json.dumps(found[0], indent=2))
-        confirm = input()
-        for i in entries:
-            if i == found[0]:
-                continue
-            else:
-                new_entries.append(i)
-            print(f"{found[0]["name"]} has been deleted")
+        confirm = input("confirm deletion of entry: ")
+        if confirm.lower in ["yes", "y", "confirm"]:
+            for i in entries:
+                if i == found[0]:
+                    continue
+                else:
+                    new_entries.append(i)
+                print(f"{found[0]["name"]} has been deleted")
 
     save_to_vault(new_entries, key, meta)
         
