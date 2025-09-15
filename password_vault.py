@@ -173,6 +173,8 @@ def create_parser():
     s.add_argument("--password", help="laev blanc for gen")
     s.set_defaults(func=term_add)
 
+    s = sub.add_parser("delete", help="delete enrtry")
+
     s = sub.add_parser("show", help="Show entry")
     g = s.add_mutually_exclusive_group(required=True)
     g.add_argument("--name")
