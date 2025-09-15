@@ -174,6 +174,7 @@ def create_parser():
     s.set_defaults(func=term_add)
 
     s = sub.add_parser("delete", help="delete enrtry")
+    s.set_defaults(func=term_delete)
 
     s = sub.add_parser("show", help="Show entry")
     g = s.add_mutually_exclusive_group(required=True)
