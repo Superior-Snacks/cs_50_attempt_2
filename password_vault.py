@@ -155,6 +155,9 @@ def term_delete(args):
                 else:
                     new_entries.append(i)
                 print(f"{found[0]["name"]} has been deleted")
+        else:
+            print("cancelled")
+            return
 
     save_to_vault(new_entries, key, meta)
         
