@@ -287,15 +287,19 @@ def term_generate(args):
 
 
 def create_parser():
+    """define the commands the program uses"""
     p = argparse.ArgumentParser(description="MY PASSWORD MANAGER")
     sub = p.add_subparsers(dest="cmd", required=True)
 
+    #init
     s = sub.add_parser("init", help="Create new vault.")
     s.set_defaults(func=setup)
 
+    #list
     s = sub.add_parser("list", help="List entries.")
     s.set_defaults(func=term_list)
 
+    #add
     s = sub.add_parser("add", help="add new wntry")
     s.add_argument("--name", required=True)
     s.add_argument("--username", required=True)
@@ -306,37 +310,37 @@ def create_parser():
     s.add_argument("--no_symbols", action="store_true")
     s.set_defaults(func=term_add)
 
+    #delete
     s = sub.add_parser("delete", help="delete enrtry")
     g = s.add_mutually_exclusive_group(required=True)
     g.add_argument("--id")
     g.add_argument("--name")
     s.set_defaults(func=term_delete)
 
+    #edit
     s = sub.add_parser("edit", help="edit an entry")
     g = s.add_mutually_exclusive_group(required=True)
     g.add_argument("--id")
     g.add_argument("--name")
-
     s.add_argument("--name_new", help="Rename the entry (new name).")
     s.add_argument("--username")
     s.add_argument("--email")
     s.add_argument("--url")
-
     pw = s.add_mutually_exclusive_group()
     pw.add_argument("--password", help="Set a new password explicitly.")
     pw.add_argument("--generate", action="store_true")
-
     s.add_argument("--length", type=int, default=20)
     s.add_argument("--no_symbols", action="store_true")
     s.set_defaults(func=term_edit)
 
+    #show
     s = sub.add_parser("show", help="Show entry")
     g = s.add_mutually_exclusive_group(required=True)
     g.add_argument("--name")
     g.add_argument("--id")
     s.set_defaults(func=term_show)
 
-
+    #generate
     s = sub.add_parser("generate", help="if you need a password")
     s.add_argument("--length", type=int, default=20)
     s.add_argument("--count", type=int, default=1)
