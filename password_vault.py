@@ -261,6 +261,7 @@ def term_edit(args):
             return
 
 def term_show(args):
+    """show all details from a entry in the vault"""
     master = get_master()
     vault_data = read_vault(VAULT_PATH)
     entries, key, meta = open_vault(master, vault_data)
@@ -275,6 +276,7 @@ def term_show(args):
         sys.exit(1)
 
 def term_generate(args):
+    """use the password generator on the command line"""
     try:
         for i in range(args.count):
             password = password_generator(length=args.length, no_symbols=args.no_symbols)
