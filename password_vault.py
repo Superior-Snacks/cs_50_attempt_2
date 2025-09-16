@@ -16,10 +16,12 @@ DEFAULT_ITERATIONS = 200_000
 
 
 def b64e(b):
+    """base encode bytes to string"""
     return base64.b64encode(b).decode("ascii")
 
 
 def b64d(s):
+    """base decode string to bytes"""
     return base64.b64decode(s.encode("ascii"))
 
 
