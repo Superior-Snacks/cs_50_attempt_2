@@ -36,6 +36,7 @@ def get_master():
 
 
 def password_generator(length=20, no_symbols=False):
+    """generate a strong password of a given lenght"""
     lowers = string.ascii_lowercase
     uppers = string.ascii_uppercase
     digits = string.digits
@@ -44,6 +45,7 @@ def password_generator(length=20, no_symbols=False):
     if not no_symbols:
         all += symbols
 
+    #ensureing that password fufills complexity requierments
     password = [
         secrets.choice(lowers),
         secrets.choice(uppers),
