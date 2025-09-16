@@ -108,7 +108,6 @@ def write_vault(p, data):
 
 
 def open_vault(master, vault_data):
-    #check if data
     salt_b = vault_data["scram"]["salt_b64e"]
     iterations = int(vault_data["scram"]["iterations"])
     key = key_scram(master, b64d(salt_b), iterations)
@@ -323,8 +322,6 @@ def create_parser():
     s.add_argument("--count", type=int, default=1)
     s.add_argument("--no_symbols", action="store_true")
     s.set_defaults(func=term_generate)
-
-
 
     return p
 
