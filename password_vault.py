@@ -54,6 +54,7 @@ def password_generator(length=20, no_symbols=False):
     if not no_symbols:
         password.append(secrets.choice(symbols))
 
+    #fill rest and shuffle for good mesure
     rem = length - len(password)
     for i in range(rem):
         password.append(secrets.choice(all))
