@@ -63,6 +63,7 @@ def password_generator(length=20, no_symbols=False):
 
 
 def setup(args):
+    """initialize a new vault"""
     if os.path.exists(VAULT_PATH):
         sys.exit(1)
     master = get_master()
