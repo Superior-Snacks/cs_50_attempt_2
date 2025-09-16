@@ -85,6 +85,7 @@ def setup(args):
 
 
 def encrypt(key, val):
+    """encrypt list or entry into aesgcm cypher"""
     iv = secrets.token_bytes(12)
     aesgcm = AESGCM(key)
     plaintext = json.dumps(val).encode("utf-8")
@@ -96,6 +97,7 @@ def encrypt(key, val):
 
 
 def decrypt(key, iv_str, ct_str):
+    """decrypt from aesgcm to python object"""
     iv = b64d(iv_str)
     ct = b64d(ct_str)
     aesgcm = AESGCM(key)
