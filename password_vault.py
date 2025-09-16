@@ -143,6 +143,7 @@ def save_to_vault(entries, key, vault_data):
 
 
 def term_list(args):
+    """prints all entrys from the vault to the command line"""
     master = get_master()
     vault_data = read_vault(VAULT_PATH)
     entries, key, meta = open_vault(master, vault_data)
@@ -153,6 +154,7 @@ def term_list(args):
 
 
 def term_add(args):
+    """add new entrys to the vault"""
     master = get_master()
     vault_data = read_vault(VAULT_PATH)
     entries, key, meta = open_vault(master, vault_data)
