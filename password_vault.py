@@ -172,6 +172,7 @@ def term_add(args):
 
 
 def term_delete(args):
+    """delete entrys from the vault"""
     master = get_master()
     vault_data = read_vault(VAULT_PATH)
     entries, key, meta = open_vault(master, vault_data)
@@ -208,6 +209,7 @@ def term_delete(args):
 
 
 def term_edit(args):
+    """change entrys in the vault"""
     master = get_master()
     vault_data = read_vault(VAULT_PATH)
     entries, key, meta = open_vault(master, vault_data)
